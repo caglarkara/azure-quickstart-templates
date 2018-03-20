@@ -422,7 +422,7 @@
       }
     },
     {
-      "apiVersion": "2016-01-09",
+      "apiVersion": "2018-03-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName1')]",
       "location": "[resourceGroup().location]",
@@ -457,7 +457,7 @@
       }
     },
     {
-      "apiVersion": "2016-01-09",
+      "apiVersion": "2018-03-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName2')]",
       "location": "[resourceGroup().location]",
@@ -492,7 +492,7 @@
       }
     },
     {
-      "apiVersion": "2016-01-09",
+      "apiVersion": "2018-03-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName3')]",
       "location": "[resourceGroup().location]",
