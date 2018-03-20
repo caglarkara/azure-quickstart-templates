@@ -109,6 +109,7 @@
       "type": "string",
       "defaultValue": "6.5",
       "allowedValues": [
+        "7.4",
         "6.5",
         "12.04.5-LTS",
         "14.04.5-LTS"
