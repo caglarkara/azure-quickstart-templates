@@ -680,7 +680,7 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName2'))]",
-        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName2'),'/extensions/',variables('vmExtensionName'))]"
+        
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
@@ -765,8 +765,7 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName3'))]",
-        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName3'),'/extensions/',variables('vmExtensionName'))]"
-      ],
+              ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
         "type": "CustomScript",
