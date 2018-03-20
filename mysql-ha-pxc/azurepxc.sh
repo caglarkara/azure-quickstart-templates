@@ -142,8 +142,8 @@ configure_disks() {
     fi
 
     echo "Creating filesystem on ${PARTITION}."
-    echo "Caglar has changed lazy_itable_init to 0 from 1"
-    mkfs -t ext4 lazy_itable_init=0 ${PARTITION}
+    echo "Caglar has removed lazy_itable_init "
+    mkfs -t ext4 ${PARTITION}
     mkdir "${MOUNTPOINT}"
     read UUID FS_TYPE < <(blkid -u filesystem ${PARTITION}|awk -F "[= ]" '{print $3" "$5}'|tr -d "\"")
     add_to_fstab "${UUID}" "${MOUNTPOINT}"
