@@ -680,8 +680,6 @@
         "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
         "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName3'),'-datadisk1'))]",
         "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName3'),'-datadisk2'))]",
-
-        "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccount'))]",
         "[concat('Microsoft.Network/networkInterfaces/', variables('nicName3'))]"
       ],
       "properties": {
