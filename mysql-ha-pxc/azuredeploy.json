@@ -530,7 +530,7 @@
     {
       "name": "[variables('vmName1')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2017-03-30",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
@@ -562,6 +562,7 @@
           },
           "dataDisks": [
             {
+              "name": "[concat(variables('vmName1'),'-datadisk1')]",
               "lun": 0,
               "createOption": "attach",
               "managedDisk": {
@@ -570,6 +571,7 @@
             },
             {
               "lun": 1,
+              "name": "[concat(variables('vmName1'),'-datadisk2')]",
               "createOption": "attach",
               "managedDisk": {
                         "id": "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName1'),'-datadisk2'))]"
@@ -612,7 +614,7 @@
     {
       "name": "[variables('vmName2')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2017-03-30",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
@@ -646,6 +648,7 @@
           "dataDisks": [
             {
               "lun": 0,
+              "name": "[concat(variables('vmName2'),'-datadisk1')]",
               "createOption": "attach",
               "managedDisk": {
                         "id": "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName2'),'-datadisk1'))]"
@@ -653,6 +656,7 @@
             },
             {
               "lun": 1,
+              "name": "[concat(variables('vmName2'),'-datadisk2')]",
               "createOption": "attach",
               "managedDisk": {
                         "id": "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName2'),'-datadisk2'))]"
@@ -676,7 +680,7 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName2'))]",
-        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName1'),'/extensions/',variables('vmExtensionName'))]"
+        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName2'),'/extensions/',variables('vmExtensionName'))]"
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
@@ -696,7 +700,7 @@
     {
       "name": "[variables('vmName3')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2017-03-30",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
@@ -729,6 +733,7 @@
           "dataDisks": [
             {
               "lun": 0,
+              "name": "[concat(variables('vmName3'),'-datadisk1')]",
               "createOption": "attach",
               "managedDisk": {
                         "id": "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName3'),'-datadisk1'))]"
@@ -736,6 +741,7 @@
             },
             {
               "lun": 1,
+              "name": "[concat(variables('vmName3'),'-datadisk2')]",
               "createOption": "attach",
               "managedDisk": {
                         "id": "[resourceId('Microsoft.Compute/disks/', concat(variables('vmName3'),'-datadisk2'))]"
@@ -759,7 +765,7 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName3'))]",
-        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName1'),'/extensions/',variables('vmExtensionName'))]"
+        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName3'),'/extensions/',variables('vmExtensionName'))]"
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
